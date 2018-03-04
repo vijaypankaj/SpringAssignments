@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+<bean id="c1" class="com.wipro.springassignments.Country">  
+<property name="countryId" value="C001"></property>
+<property name="countryName" value="India"></property>
+</bean>  
+  
+<bean id="c2" class="com.wipro.springassignments.Country">  
+<property name="countryId" value="C002"></property>
+<property name="countryName" value="South Africa"></property>
+</bean>  
+  
+<bean id="p1" class="com.wipro.springassignments.Player">  
+<property name="playerId" value="P001"></property>
+<property name="playerName" value="Sachin"></property>
+<property name="country" ref="c1"></property>
+</bean>  
+
+<bean id="p2" class="com.wipro.springassignments.Player">  
+<property name="playerId" value="P002"></property>
+<property name="playerName" value="JP Duminy"></property>
+<property name="country" ref="c2"></property>
+</bean>  
+
+<bean id="p3" class="com.wipro.springassignments.Player">  
+<property name="playerId" value="P003"></property>
+<property name="playerName" value="Mornei Morkel"></property>
+<property name="country" ref="c2"></property>
+</bean>  
+
+<bean id="p4" class="com.wipro.springassignments.Player">  
+
+<property name="playerId" value="P004"></property>
+<property name="playerName" value="MS Dhoni"></property>
+<property name="country" ref="c1"></property>
+</bean>  
+
+<bean id="p5" class="com.wipro.springassignments.Player">  
+<property name="playerId" value="P005"></property>
+<property name="playerName" value="Rohit Sharma"></property>
+<property name="country" ref="c1"></property>
+</bean>    
+  
+  <bean id="cp1" class="com.wipro.springassignments.MappingClass">
+  <property name="mappp">
+  <map>
+  <entry key-ref="c1">
+  <list>
+  <ref bean="p1"/>
+  <ref bean="p4"/>
+  <ref bean="p5"/>
+  </list>
+  </entry>
+
+  <entry key-ref="c2">
+  <list>
+  <ref bean="p2"/>
+  <ref bean="p3"/>
+  </list>
+  </entry>
+  </map>
+  </property>
+  </bean>
+</beans> 

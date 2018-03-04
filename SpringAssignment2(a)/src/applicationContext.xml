@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+<bean id="t1" class="com.wipro.springassignment.Test">  
+<property name="testId" value="T001"></property>  
+<property name="testTitle" value="Core Java Test"></property>
+<property name="testMarks" value="80"></property>
+</bean>  
+  
+  <bean id="t2" class="com.wipro.springassignment.Test">  
+<property name="testId" value="T002"></property>  
+<property name="testTitle" value="Periodic Table"></property>
+<property name="testMarks" value="89"></property>
+</bean>  
+  
+<bean id="t3" class="com.wipro.springassignment.Test">  
+<property name="testId" value="T003"></property>  
+<property name="testTitle" value="Linked List"></property>
+<property name="testMarks" value="90"></property>
+</bean>  
+  
+<bean id="st1" class="com.wipro.springassignment.Student">  
+<property name="studentId" value="S001"></property>  
+<property name="studentName" value="Steve"></property>
+<property name="studentTest">
+<set>
+<ref bean="t1"></ref>
+</set>
+</property>
+</bean>   
+  
+<bean id="st2" class="com.wipro.springassignment.Student">  
+<property name="studentId" value="S002"></property>  
+<property name="studentName" value="Priya Saxena"></property>
+<property name="studentTest">
+<set>
+<ref bean="t2"></ref>
+<ref bean="t3"></ref>
+</set>
+</property>
+</bean>   
+</beans> 

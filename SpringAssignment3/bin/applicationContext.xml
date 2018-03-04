@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="studentBean" class="com.wipro.springassignments.Student">
+	</bean>
+	
+	<bean id="hijackAroundMethodBean" class="com.wipro.springassignments.HijackAroundMethod" />
+
+	<bean id="studentProxy"
+                class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="studentBean" />
+		<property name="interceptorNames">
+			<list>
+				<value>hijackAroundMethodBean</value>
+			</list>
+		</property>
+	</bean>
+</beans>
